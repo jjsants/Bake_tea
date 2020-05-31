@@ -85,3 +85,51 @@ new fullpage('#fullpage', {
     }
   }
 });
+
+//collection fullPage
+//function used to create the first carousel
+function changeSlide(direction) {
+  var currentImg = $(".active");
+  var nextImg = currentImg.next();
+  var previousImg = currentImg.prev();
+
+  if (direction == "next") {
+    if (nextImg.length) {
+      nextImg.addClass("active");
+    } else {
+      $(".collection-slider .img-bakery-collection").first().addClass("active");
+    }
+
+  } else {
+    if (previousImg.length) {
+      previousImg.addClass("active");
+    } else {
+      $(".collection-slider .img-bakery-collection").last().addClass("active");
+    }
+  }
+  currentImg.removeClass("active");
+}
+
+//collection fullPage
+//function used to create the second carousel
+function changeSlide2(direction) {
+  var currentImg = $(".active2");
+  var nextImg = currentImg.next();
+  var previousImg = currentImg.prev();
+
+  if (direction == "next") {
+    if (nextImg.length) {
+      nextImg.addClass("active2");
+    } else {
+      $(".collection-slider2 .img-bake-collection").first().addClass("active2");
+    }
+
+  } else {
+    if (previousImg.length) {
+      previousImg.addClass("active2");
+    } else {
+      $(".collection-slider2 .img-bake-collection").last().addClass("active2");
+    }
+  }
+  currentImg.removeClass("active2");
+}
