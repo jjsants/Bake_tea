@@ -1,3 +1,7 @@
+
+
+
+
 // using fullpage.js to structure the scrolling style of the page
 new fullpage('#fullpage', {
   autoScrolling: false,
@@ -7,7 +11,7 @@ new fullpage('#fullpage', {
   // controlArrows:true,
   // slidesNavigation:true
 
-  onLeave: function(origin, destination, direction) {
+  onLeave: function (origin, destination, direction) {
     var leavingSection = this;
     var tl = gsap.timeline({
       delay: 0.7
@@ -16,15 +20,15 @@ new fullpage('#fullpage', {
     if (origin.index == 0 && direction == 'down') {
       //Used greeshock 3 to do the animations.
       tl.fromTo(".presentation", {
-          height: 0,
-          width: 0
-        }, {
-          duration: 1,
-          width: "50%",
-          height: "70%",
-          ease: "power4",
-          right: "25%"
-        })
+        height: 0,
+        width: 0
+      }, {
+        duration: 1,
+        width: "50%",
+        height: "70%",
+        ease: "power4",
+        right: "25%"
+      })
         .from(".intro-text", {
           opacity: 0,
           duration: 2,
@@ -55,16 +59,19 @@ new fullpage('#fullpage', {
 
     } else if (origin.index == 2 && direction == 'up') {
       //alert("Going to section 1!");
+
+    } else if (origin.index == 1 && direction == 'up') {
+      //alert("Going to section 0!");
       tl.fromTo(".presentation", {
-          height: 0,
-          width: 0
-        }, {
-          duration: 1,
-          width: "50%",
-          height: "70%",
-          ease: "power4",
-          right: "25%"
-        })
+        height: 0,
+        width: 0
+      }, {
+        duration: 1,
+        width: "50%",
+        height: "70%",
+        ease: "power4",
+        right: "25%"
+      })
         .from(".intro-text", {
           opacity: 0,
           duration: 2,
@@ -89,25 +96,25 @@ new fullpage('#fullpage', {
 //collection fullPage
 //function used to create the first carousel
 function changeSlide(direction) {
-  var currentImg = $(".active");
+  var currentImg = $(".active1");
   var nextImg = currentImg.next();
   var previousImg = currentImg.prev();
 
   if (direction == "next") {
     if (nextImg.length) {
-      nextImg.addClass("active");
+      nextImg.addClass("active1");
     } else {
-      $(".collection-slider .img-bakery-collection").first().addClass("active");
+      $(".collection-slider .img-bakery-collection").first().addClass("active1");
     }
 
   } else {
     if (previousImg.length) {
-      previousImg.addClass("active");
+      previousImg.addClass("active1");
     } else {
-      $(".collection-slider .img-bakery-collection").last().addClass("active");
+      $(".collection-slider .img-bakery-collection").last().addClass("active1");
     }
   }
-  currentImg.removeClass("active");
+  currentImg.removeClass("active1");
 }
 
 //collection fullPage
@@ -133,3 +140,284 @@ function changeSlide2(direction) {
   }
   currentImg.removeClass("active2");
 }
+
+// -----------------------------------------------------------
+
+// map api
+
+function initMap() {
+  var dublin = {
+    lat: 53.395455999999996,
+    lng: -6.127616
+
+  };
+
+  var map = new google.maps.Map(document.getElementById('map1'), {
+    scaleControl: true,
+    center: dublin,
+    zoom: 14
+  });
+
+  var infowindow = new google.maps.InfoWindow;
+  infowindow.setContent('<b>BakedToATea</b>');
+
+  var marker = new google.maps.Marker({
+    map: map,
+    position: dublin
+  });
+  marker.addListener('click', function () {
+    infowindow.open(map, marker);
+
+  });
+}
+
+
+// -----------------------------------------------------------
+// recipe API
+
+// add an event listener to the button that runs the function sendApiRequest when it is clicked.
+// const content = document.getElementById("content");
+// let searchNoInput = document.createElement("div")
+// let searchInput = document.querySelector(".searchInputRecipe")
+// let searchButton = document.querySelector("#search")
+
+// content.appendChild(searchNoInput)
+
+// searchButton.addEventListener("click", () => {
+//   console.log("button pressed")
+
+//   // debugger;
+//   if (searchInput.value == "") {
+//     setTimeout(function () {
+//       searchNoInput.innerHTML = "<h2> Please enter a name.</h2>" // only working once at the moment.
+//       $(searchNoInput).fadeOut(5000);
+//     }, 500);
+//     return;
+//   } else {
+//     sendApiRequest(searchInput.value)
+//   }
+// })
+
+// //an asysncrhonous function to fetch data from the API.
+// async function sendApiRequest(text) {
+//   let search = text;
+
+//   let APP_ID = "8890b18e"
+//   let API_KEY = "83f29000c0d94a9e37e048533135f2c4"
+//   let response = await fetch(`https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}&q=${search}`);
+//   console.log(response)
+//   let data = await response.json()
+//   console.log(data)
+//   useApiData(data)
+// }
+
+// function useApiData(data) {
+
+//   const content = document.getElementById("content");
+
+//   let display_Result = "";
+
+//   for (let i = 0; i < data.hits.length; i++) {
+
+//     display_Result = display_Result + `
+
+//       <div class="row wrapper">
+//       <div class="col-12 col-sm-6 col-md-4">
+//       <div class="card" style="width: 18rem;">
+//         <img src="${data.hits[i].recipe.image}" class="card-img-top" alt="...">
+//         <div class="card-body">
+//           <h5 class="card-title">${data.hits[i].recipe.label}</h5>
+//           <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
+//           <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
+//           <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
+//           <a href="${data.hits[i].recipe.url}" class="btn btn-primary" target="_blank">Full Recipe</a>
+//         </div>
+//       </div>
+//       </div>
+//       </div>
+//       `
+//   }
+//   document.querySelector("#content").innerHTML = display_Result;
+// }
+// -----------------------------------------------------------
+
+
+
+// recipe API 2
+
+// add an event listener to the button that runs the function sendApiRequest when it is clicked.
+const content = document.getElementById("content");
+let searchNoInput = document.createElement("div")
+let searchInput = document.querySelector(".searchInputRecipe")
+let searchButton = document.querySelector("#search")
+
+content.appendChild(searchNoInput)
+
+searchButton.addEventListener("click", () => {
+  console.log("button pressed")
+
+  // debugger;
+  if (searchInput.value == "") {
+    setTimeout(function () {
+      searchNoInput.innerHTML = "<h2> Please enter a name.</h2>" // only working once at the moment.
+      $(searchNoInput).fadeOut(5000);
+    }, 500);
+    return;
+  } else {
+    sendApiRequest(searchInput.value)
+  }
+})
+
+//an asysncrhonous function to fetch data from the API.
+async function sendApiRequest(text) {
+  let search = text;
+
+  let APP_ID = "8890b18e"
+  let API_KEY = "83f29000c0d94a9e37e048533135f2c4"
+  let response = await fetch(`https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}&q=${search}`);
+  console.log(response)
+  let data = await response.json()
+  console.log(data)
+  useApiData(data)
+}
+
+function useApiData(data) {
+
+  const content = document.getElementById("content");
+
+  let display_Result = "";
+
+  let counter = 0;
+
+  for (let i = 0; i < data.hits.length; i++) {
+
+    if (counter == 0) {
+      `
+<div id="carouselExampleInterval" class="carousel slide" data-ride="false">
+    <div class="carousel-inner">
+      <div class="testimonial-recipe-header">
+        <h2 class="testimonialrecipe-header-h">Testimonials</h2>
+        <hr class="testimonial-recipe-line">
+        <p class="testimonial-recipe-header-p">The result of Years of dedication and love translated.</p>
+      </div>
+    
+      <div class="row wrapper">
+          <div class="col-12 col-sm-6 col-md-4">
+          <div class="card" style="width: 18rem;">
+            <img src="${data.hits[i].recipe.image}" class="card-img-top" alt="...">
+            <div class="card-body carousel-item">
+              <h5 class="card-title">${data.hits[i].recipe.label}</h5>
+              <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
+              <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
+              <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
+              <a href="${data.hits[i].recipe.url}" class="btn btn-primary" target="_blank">Full Recipe</a>
+            </div>
+          </div>
+          </div>
+          </div>
+     
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+    </div>
+      `
+      counter++;
+    } else {
+      display_Result = display_Result + `
+  
+    <div id="carouselExampleInterval" class="carousel slide" data-ride="false">
+    <div class="carousel-inner">
+      <div class="testimonial-recipe-header">
+        <h2 class="testimonialrecipe-header-h">Testimonials</h2>
+        <hr class="testimonial-recipe-line">
+        <p class="testimonial-recipe-header-p">The result of Years of dedication and love translated.</p>
+      </div>
+    
+      <div class="row wrapper">
+          <div class="col-12 col-sm-6 col-md-4">
+          <div class="card" style="width: 18rem;">
+            <img src="${data.hits[i].recipe.image}" class="card-img-top" alt="...">
+            <div class="card-body carousel-item">
+              <h5 class="card-title">${data.hits[i].recipe.label}</h5>
+              <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
+              <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
+              <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
+              <a href="${data.hits[i].recipe.url}" class="btn btn-primary" target="_blank">Full Recipe</a>
+            </div>
+          </div>
+          </div>
+          </div>
+     
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+    </div>
+      `
+    }
+    document.querySelector("#content").innerHTML = display_Result;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// recipe test 2
+
+// <div id="carouselExampleInterval" class="carousel slide" data-ride="false">
+// <div class="carousel-inner">
+//   <div class="testimonial-header">
+//     <h2 class="testimonial-header-h">Testimonials</h2>
+//     <hr class="testimonial-line">
+//     <p class="testimonial-header-p">The result of Years of dedication and love translated.</p>
+//   </div>
+
+//   <div class="row wrapper">
+//       <div class="col-12 col-sm-6 col-md-4">
+//       <div class="card" style="width: 18rem;">
+//         <img src="${data.hits[i].recipe.image}" class="card-img-top" alt="...">
+//         <div class="card-body">
+//           <h5 class="card-title">${data.hits[i].recipe.label}</h5>
+//           <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
+//           <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
+//           <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
+//           <a href="${data.hits[i].recipe.url}" class="btn btn-primary" target="_blank">Full Recipe</a>
+//         </div>
+//       </div>
+//       </div>
+//       </div>
+//   {/* <div class="carousel-item active">
+//     <h2 class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+//       incididunt ut labore et dolore magna aliqua.</h2>
+//     <img class="testimonial-img" src="images/testimonials/hopper_perfil_circle.png" alt="people-profile">
+//     <em>Hopper, Cork</em>
+//   </div>
+//   */}
+// </div>
+// <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+//   <span class="carousel-control-prev-icon"></span>
+
+// </a>
+// <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+//   <span class="carousel-control-next-icon"></span>
+// </a>
+// </div>
