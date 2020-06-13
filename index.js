@@ -241,8 +241,6 @@ function initMap() {
 // }
 // -----------------------------------------------------------
 
-
-
 // recipe API 2
 
 // add an event listener to the button that runs the function sendApiRequest when it is clicked.
@@ -293,15 +291,7 @@ function useApiData(data) {
 
     if (counter == 0) {
       `
-<div id="carouselExampleInterval" class="carousel slide" data-ride="false">
-    <div class="carousel-inner">
-      <div class="testimonial-recipe-header">
-        <h2 class="testimonialrecipe-header-h">Testimonials</h2>
-        <hr class="testimonial-recipe-line">
-        <p class="testimonial-recipe-header-p">The result of Years of dedication and love translated.</p>
-      </div>
-    
-      <div class="row wrapper">
+      <div class="row wrapper active">
           <div class="col-12 col-sm-6 col-md-4">
           <div class="card" style="width: 18rem;">
             <img src="${data.hits[i].recipe.image}" class="card-img-top" alt="...">
@@ -316,27 +306,11 @@ function useApiData(data) {
           </div>
           </div>
      
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
-    </div>
       `
+      // document.querySelector("#content").innerHTML = display_Result;
       counter++;
     } else {
       display_Result = display_Result + `
-  
-    <div id="carouselExampleInterval" class="carousel slide" data-ride="false">
-    <div class="carousel-inner">
-      <div class="testimonial-recipe-header">
-        <h2 class="testimonialrecipe-header-h">Testimonials</h2>
-        <hr class="testimonial-recipe-line">
-        <p class="testimonial-recipe-header-p">The result of Years of dedication and love translated.</p>
-      </div>
     
       <div class="row wrapper">
           <div class="col-12 col-sm-6 col-md-4">
@@ -352,17 +326,9 @@ function useApiData(data) {
           </div>
           </div>
           </div>
-     
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
-    </div>
+
       `
+      // document.querySelector("#content").innerHTML = display_Result;
     }
     document.querySelector("#content").innerHTML = display_Result;
   }
@@ -371,53 +337,3 @@ function useApiData(data) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-// recipe test 2
-
-// <div id="carouselExampleInterval" class="carousel slide" data-ride="false">
-// <div class="carousel-inner">
-//   <div class="testimonial-header">
-//     <h2 class="testimonial-header-h">Testimonials</h2>
-//     <hr class="testimonial-line">
-//     <p class="testimonial-header-p">The result of Years of dedication and love translated.</p>
-//   </div>
-
-//   <div class="row wrapper">
-//       <div class="col-12 col-sm-6 col-md-4">
-//       <div class="card" style="width: 18rem;">
-//         <img src="${data.hits[i].recipe.image}" class="card-img-top" alt="...">
-//         <div class="card-body">
-//           <h5 class="card-title">${data.hits[i].recipe.label}</h5>
-//           <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
-//           <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
-//           <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
-//           <a href="${data.hits[i].recipe.url}" class="btn btn-primary" target="_blank">Full Recipe</a>
-//         </div>
-//       </div>
-//       </div>
-//       </div>
-//   {/* <div class="carousel-item active">
-//     <h2 class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-//       incididunt ut labore et dolore magna aliqua.</h2>
-//     <img class="testimonial-img" src="images/testimonials/hopper_perfil_circle.png" alt="people-profile">
-//     <em>Hopper, Cork</em>
-//   </div>
-//   */}
-// </div>
-// <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-//   <span class="carousel-control-prev-icon"></span>
-
-// </a>
-// <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-//   <span class="carousel-control-next-icon"></span>
-// </a>
-// </div>
