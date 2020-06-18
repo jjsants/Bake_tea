@@ -6,8 +6,8 @@
 new fullpage('#fullpage', {
   autoScrolling: false,
   navigation: true,
-  navigationTooltips: ["home", "about us", "contact"],
-  showActiveTooltip: true,
+  navigationTooltips: ["home", "about us", "collection", "testimonials", "recipes"],
+  showActiveTooltip: false,
   // controlArrows:true,
   // slidesNavigation:true
 
@@ -241,6 +241,8 @@ function initMap() {
 // }
 // -----------------------------------------------------------
 
+
+
 // recipe API 2
 
 // add an event listener to the button that runs the function sendApiRequest when it is clicked.
@@ -288,46 +290,45 @@ function useApiData(data) {
   let counter = 0;
 
   for (let i = 0; i < data.hits.length; i++) {
-
     if (counter == 0) {
-      `
-      <div class="row wrapper active">
-          <div class="col-12 col-sm-6 col-md-4">
-          <div class="card" style="width: 18rem;">
-            <img src="${data.hits[i].recipe.image}" class="card-img-top" alt="...">
-            <div class="card-body carousel-item">
-              <h5 class="card-title">${data.hits[i].recipe.label}</h5>
-              <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
-              <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
-              <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
-              <a href="${data.hits[i].recipe.url}" class="btn btn-primary" target="_blank">Full Recipe</a>
-            </div>
-          </div>
-          </div>
-          </div>
-     
-      `
+      display_Result = display_Result + `
+      <div class="carousel-item carousel-item-api active">
+
+      <div class="card" style="width: 18rem;">
+      <img src="${data.hits[i].recipe.image}" class="img-recipe-slide" alt="image slide API">
+  <div class="card-body card-body-recipe">
+  <h5 class="card-title card-title-recipe">${data.hits[i].recipe.label}</h5>
+  <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
+  <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
+  <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
+  <a href="${data.hits[i].recipe.url}" class="btn btn-primary btn-recipe" target="_blank">Full Recipe</a>
+  </div>
+</div>
+
+  </div>
+
+    `
       // document.querySelector("#content").innerHTML = display_Result;
       counter++;
     } else {
       display_Result = display_Result + `
-    
-      <div class="row wrapper">
-          <div class="col-12 col-sm-6 col-md-4">
-          <div class="card" style="width: 18rem;">
-            <img src="${data.hits[i].recipe.image}" class="card-img-top" alt="...">
-            <div class="card-body carousel-item">
-              <h5 class="card-title">${data.hits[i].recipe.label}</h5>
-              <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
-              <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
-              <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
-              <a href="${data.hits[i].recipe.url}" class="btn btn-primary" target="_blank">Full Recipe</a>
-            </div>
-          </div>
-          </div>
-          </div>
+        
+           <div class="carousel-item carousel-item-api">
 
-      `
+            <div class="card" style="width: 18rem;">
+            <img src="${data.hits[i].recipe.image}" class="img-recipe-slide" alt="image slide API">
+        <div class="card-body card-body-recipe">
+        <h5 class="card-title card-title-recipe">${data.hits[i].recipe.label}</h5>
+        <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
+        <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
+        <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
+        <a href="${data.hits[i].recipe.url}" class="btn btn-primary btn-recipe" target="_blank">Full Recipe</a>
+        </div>
+      </div>
+
+        </div>
+    
+          `
       // document.querySelector("#content").innerHTML = display_Result;
     }
     document.querySelector("#content").innerHTML = display_Result;

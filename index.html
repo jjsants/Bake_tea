@@ -24,8 +24,8 @@
       <!-- navbar -->
       <div class="navColor d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3">
         <!-- <img class="logo my-0 mr-md-auto" src="images/cake-logo12.png" alt="cake-logo"> -->
-        <h5 class="logo my-0 mr-md-auto font-weight-normal">BakedToATea</h5>
-        <nav class="my-2 my-md-0">
+        <h5 class="logo my-0 mr-md-auto font-weight-normal"> BakedToATea</h5>
+        <nav class="my-2 my-md-0 nav-information">
           <a class="p-2 text-dark" href="#aboutus">About Us</a>
           <a class="p-2 text-dark" href="#collections">Collection</a>
           <a class="p-2 text-dark" href="#testimonial">Testimonials</a>
@@ -67,6 +67,7 @@
 
         <div class="row">
           <div class="col-lg-4">
+            <div class="about-decade">In the 70's</div>
             <div class="block70">
               <div class="about-img-box">
                 <img class="img-bake img-bake70 img-bake70-3" src="images/70/wedding-cake70.jpg" alt="wedding cake70's">
@@ -83,6 +84,7 @@
             </div>
           </div>
           <div class="col-lg-4">
+            <div class="about-decade">In the 90's</div>
             <div class="block90">
               <div class="about-img-box">
                 <img class="img-bake img-bake90" src="images/90/bakery-90.jpg" alt="bakery90's">
@@ -98,6 +100,7 @@
             </div>
           </div>
           <div class="col-lg-4">
+            <div class="about-decade">In the 2000's</div>
             <div class="block20">
               <div class="about-img-box">
                 <img class="img-bake img-bake20" src="images/20/bakery2020.jpg" alt="bakery20's">
@@ -134,8 +137,8 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="collection-block70">
-              <div class="collection-weddings">
-                <p>The Weddings</p>
+              <div class="collection-weddings-brunch">
+                <h3>Weddings</h3>
               </div>
               <div class="collection-slider">
                 <img class="img-bakery-collection" src="images/70/wedding-cake70.jpg" alt="wedding cake70's">
@@ -160,8 +163,8 @@
 
           <div class="col-lg-6">
             <div class="collection-block70">
-              <div class="collection-weddings">
-                <p>The Weddings</p>
+              <div class="collection-weddings-brunch">
+                <h3>Brunch</h3>
               </div>
               <div class="collection-slider2">
                 <!-- <img class="img-bake-Collection" src="images/90/wedding-cake90.jpg" alt="wedding cake70's"> -->
@@ -219,10 +222,11 @@
         </div>
         <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon"></span>
-
+          <img src="images/Arrows/back.png" class="img-arrow" alt="image arrow left">
         </a>
         <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
           <span class="carousel-control-next-icon"></span>
+          <img src="images/Arrows/forward.png" class="img-arrow" alt="image arrow right">
         </a>
       </div>
     </div>
@@ -258,72 +262,83 @@
       <img src="images/footer/instagram.jpeg" class="footer-Logo footer-Logo2" alt="instagram icon">
       <p class="footer-text">© Copyright 2020 Junior</p>
     </div>
-  </div> -->
+   </div> -->
 
 
-  <!-- End recipe API -->
-
-  <!-- End recipe API -->
-<!-- -------------------------------------------------------------------------------------------- -->
-<!-- recipe API test - adding shell -->
+    <!-- End recipe API -->
+    <!-- -------------------------------------------------------------------------------------------- -->
+    <!-- recipe API test - adding shell -->
 
 
-<div class=" recipeApi section container-fluid" id="recipe">
-  <div class="recipe-header">
-    <h2 class="recipe-header-h">Recipes</h2>
-    <hr class="recipe-line">
-    <p class="recipe-header-p">The result of Years of dedication and love translated.</p>
-  </div>
-
-  <div class="input-group col-6 offset-3">
-   
-    <input type="text" class="searchInputRecipe" id="search_Input" placeholder="Search Recipe"
-      aria-label="Recipient's username" aria-describedby="button-addon2">
-    <div class="input-group-append">
-      <button class="btn btnSearch btn-outline-secondary" type="button" id="search">Search</button>
-    </div>
-  </div>
-
-  <!-- <div id="content"></div> -->
-
-<!-- carousel code -->
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-
-      <div id="content"></div>
-      
-      <!-- <div class="carousel-item active">
-        <img src="..." class="d-block w-100" alt="...">
-        <p>text test</p>
+    <div class=" recipeApi section container-fluid" id="recipe">
+      <div class="recipe-header">
+        <h2 class="recipe-header-h">Recipes</h2>
+        <hr class="recipe-line">
+        <p class="recipe-header-p">The result of Years of dedication and love translated.</p>
       </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-        <p>text test1</p>
+
+      <div class="input-group col-6 offset-3">
+
+        <input type="text" class="searchInputRecipe" id="search_Input" placeholder="Search Recipe"
+          aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btnSearch btn-outline-secondary" type="button" id="search">Search</button>
+        </div>
       </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-        <p>text test2</p>
-      </div> -->
-  
+
+      <!-- <div id="content"></div> -->
+
+      <!-- carousel code -->
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+
+          <div id="content"></div>
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+          <img src="images/Arrows/back.png" class="img-arrow" alt="image arrow left">
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+          <img src="images/Arrows/forward.png" class="img-arrow" alt="image arrow right">
+        </a>
+      </div>
+      <!-- <div class="footer-line"></div> -->
+      <div class="row map-main">
+        <div class="col-6 col-lg-2 map-layout">
+          <div id="map1"></div>
+        </div>
+        <div class=" col-6 col-lg-6 map-text">
+          <h3>Location</h3>
+          <p>Red Arches Road, Baldoyle</p>
+          <p>Dublin - Ireland</p>
+          <p>Contact: (+353) 98 987 987</p>
+        </div>
+        <div class="col-sm-12 col-lg-4 footer-logo-main">
+          <img src="images/footer/youtube.png" class="footer-Logo footer-Logo3" alt="youtube icon">
+          <img src="images/footer/facebook.png" class="footer-Logo footer-Logo1" alt="facebook icon">
+          <img src="images/footer/instagram.png" class="footer-Logo footer-Logo2" alt="instagram icon">
+        </div>
+      </div>
+
+
+
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+
   </div>
-  
-</div>
+
+
+
 
 
 
 
   <!-- ------------------------------------------------------------------------------------- -->
 
-  </div>
+
 
   <!-- <div class="container-fluid five"></div>
 
