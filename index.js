@@ -61,7 +61,6 @@ function initMap() {
   var dublin = {
     lat: 53.395455999999996,
     lng: -6.127616
-
   };
 
   var map = new google.maps.Map(document.getElementById('map1'), {
@@ -135,21 +134,19 @@ function useApiData(data) {
       display_Result = display_Result + `
       <div class="carousel-item carousel-item-api active">
 
-      <div class="card" style="width: 18rem;">
-      <img src="${data.hits[i].recipe.image}" class="img-recipe-slide" alt="image slide API">
-  <div class="card-body card-body-recipe">
-  <h5 class="card-title card-title-recipe">${data.hits[i].recipe.label}</h5>
-  <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
-  <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
-  <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
-  <a href="${data.hits[i].recipe.url}" class="btn btn-primary btn-recipe" target="_blank">Full Recipe</a>
-  </div>
-</div>
+        <div class="card" style="width: 18rem;">
+        <img src="${data.hits[i].recipe.image}" class="img-recipe-slide" alt="image slide API">
+            <div class="card-body card-body-recipe">
+            <h5 class="card-title card-title-recipe">${data.hits[i].recipe.label}</h5>
+            <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
+            <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
+            <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
+            <a href="${data.hits[i].recipe.url}" class="btn btn-primary btn-recipe" target="_blank">Full Recipe</a>
+            </div>
+        </div>
 
-  </div>
+    </div>`
 
-    `
-      // document.querySelector("#content").innerHTML = display_Result;
       counter++;
     } else {
       display_Result = display_Result + `
@@ -158,19 +155,16 @@ function useApiData(data) {
 
             <div class="card" style="width: 18rem;">
             <img src="${data.hits[i].recipe.image}" class="img-recipe-slide" alt="image slide API">
-        <div class="card-body card-body-recipe">
-        <h5 class="card-title card-title-recipe">${data.hits[i].recipe.label}</h5>
-        <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
-        <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
-        <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
-        <a href="${data.hits[i].recipe.url}" class="btn btn-primary btn-recipe" target="_blank">Full Recipe</a>
+            <div class="card-body card-body-recipe">
+                <h5 class="card-title card-title-recipe">${data.hits[i].recipe.label}</h5>
+                <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
+                <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
+                <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
+                <a href="${data.hits[i].recipe.url}" class="btn btn-primary btn-recipe" target="_blank">Full Recipe</a>
+             </div>
         </div>
-      </div>
 
-        </div>
-    
-          `
-      // document.querySelector("#content").innerHTML = display_Result;
+        </div>`
     }
     document.querySelector("#content").innerHTML = display_Result;
   }

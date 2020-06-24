@@ -1,39 +1,70 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
 
-Welcome Edivar O Ceadaigh,
+# BakedToATea
+This project was created to provide a better understanding of a small baking company made by family members that evolved into a great business. The website is focused on purely weddings and brunch.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+## Strategy:
+By showing the company's origin and the way how they do business, the website exposes it in order to attract clients. 
 
-## Gitpod Reminders
+## Scope:
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+the website is provided with an initial page which has a nav bar who can take the user anywhere in the site.
+It mention a bit of the company history, where the user get to know about the company and their beliefs. 
+The page also shows a collection of products created for its clients and a page with its client's comments about the company.
+Not less important, the site provides a last page who offer the users the option of getting recipes online.
 
-`python3 -m http.server`
+## Structure:
+Home: It reflects the company's main purpose. The gold background in conjunction with the cake image translates the company main focus.
 
-A blue button should appear to click: _Make Public_,
+about: contains part of the company's history and also has the function of express the company values and purpose.
 
-Another blue button should appear to click: _Open Browser_.
+Collection: this section aim to gather the user attention by showing some of the company's selection.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Testominials: the focus here is making its potencial clients feel more confortable with the company's work by reading other clients comments.
 
-A blue button should appear to click: _Make Public_,
+Recipes: The main goal here is, besides of providing an varieties of recipes, is to offer the option of having any of the recipes that they find on the website prepared for them.
 
-Another blue button should appear to click: _Open Browser_.
+Footer: the company's map can be accessed, as its facebook, youtube and instagram.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+## UI/UX
+<img src="images/readme/BakedToATeaPNG.png" style="margin: 0;">
 
-## Updates Since The Instructional Video
+## Technologies Used:
+HTML  
+CSS  
+Bootstrap
+Javascript
+Jquery
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+## Testing:
+The testing was done in different screen sizes, including the mobile screen through the python server and using github repository link.
+The website link was sent out to a couple of people for testing purpose only. The topics to be analysed were design, functionability(mobile and computer version), user response. As a result of it, there were found the below:
+1. issue: the map doesnt expand on mobile version.
+    Not resolved
+2. Issue: The testominial screen height wasnt enough for screen soze bigger then 1400px.
+    Resolved. Added a @media to scale the page.
+3. Issue: The logo name wasnt showing completely when displayed in mobile small screen. For example iPhone 8 or smaller.
+    Resolved. Rescaled the page.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+The project was also tested with Chrome and Safari web browser and it behaved as expected.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Deployment:
+The website is hosted using GitHub, deployed from the master branch. The deployed site was updated automatically upon new commits and in order for the site to send the information correctly to GitHub, the main page was called index.html.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+# Credits
+Got a great suppport from my mentor, who had the patience and great hability of teaching my API in a clear and easier way.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Content:
+Some of the content of this webpage was taken from the below:
+1. https://www.covecakedesign.ie/about/
+2. https://cgweddingcakedesign.ie/
+3. http://amazingcakes.ie/
 
----
+## Media:
+Some of the images of this project were taken from the links below:
+https://www.covecakedesign.ie/
+All the images from the collections page/ brunchs were taken from a friend who creates wedding cakes and cokies.
 
-Happy coding!
+## Acknowledgements:
+Due to the amount of false information around the social media, this project was felt like needed in order to provide important and clear information for those who are sicking.
+
+
