@@ -1,10 +1,8 @@
 
-
-// fade out logo when scroll down
-$(window).scroll(function(){
+$(window).scroll(function () {
   $(".logo").css("opacity", 1 - $(window).scrollTop() / 250);
 });
-// ----------------------------------------------------------------
+
 
 //function used to create the first carousel
 function changeSlide(direction) {
@@ -28,7 +26,6 @@ function changeSlide(direction) {
   }
   currentImg.removeClass("active1");
 }
-
 
 //function used to create the second carousel
 function changeSlide2(direction) {
@@ -61,6 +58,7 @@ function initMap() {
   var dublin = {
     lat: 53.395455999999996,
     lng: -6.127616
+
   };
 
   var map = new google.maps.Map(document.getElementById('map1'), {
@@ -84,7 +82,7 @@ function initMap() {
 
 // -----------------------------------------------------------
 
-// recipe API 2
+// recipe API 
 
 // add an event listener to the button that runs the function sendApiRequest when it is clicked.
 const content = document.getElementById("content");
@@ -92,7 +90,7 @@ let searchNoInput = document.createElement("div")
 let searchInput = document.querySelector(".searchInputRecipe")
 let searchButton = document.querySelector("#search")
 
-content.appendChild(searchNoInput)
+content.appendChild(searchNoInput);
 
 searchButton.addEventListener("click", () => {
   console.log("button pressed")
@@ -134,19 +132,20 @@ function useApiData(data) {
       display_Result = display_Result + `
       <div class="carousel-item carousel-item-api active">
 
-        <div class="card" style="width: 18rem;">
-        <img src="${data.hits[i].recipe.image}" class="img-recipe-slide" alt="image slide API">
-            <div class="card-body card-body-recipe">
-            <h5 class="card-title card-title-recipe">${data.hits[i].recipe.label}</h5>
-            <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
-            <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
-            <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
-            <a href="${data.hits[i].recipe.url}" class="btn btn-primary btn-recipe" target="_blank">Full Recipe</a>
-            </div>
-        </div>
+      <div class="card" style="width: 18rem;">
+      <img src="${data.hits[i].recipe.image}" class="img-recipe-slide" alt="image slide API">
+  <div class="card-body card-body-recipe">
+  <h5 class="card-title card-title-recipe">${data.hits[i].recipe.label}</h5>
+  <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
+  <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
+  <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
+  <a href="${data.hits[i].recipe.url}" class="btn btn-primary btn-recipe" target="_blank">Full Recipe</a>
+  </div>
+  </div>
 
-    </div>`
+  </div>
 
+    `
       counter++;
     } else {
       display_Result = display_Result + `
@@ -155,21 +154,23 @@ function useApiData(data) {
 
             <div class="card" style="width: 18rem;">
             <img src="${data.hits[i].recipe.image}" class="img-recipe-slide" alt="image slide API">
-            <div class="card-body card-body-recipe">
-                <h5 class="card-title card-title-recipe">${data.hits[i].recipe.label}</h5>
-                <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
-                <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
-                <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
-                <a href="${data.hits[i].recipe.url}" class="btn btn-primary btn-recipe" target="_blank">Full Recipe</a>
-             </div>
+        <div class="card-body card-body-recipe">
+        <h5 class="card-title card-title-recipe">${data.hits[i].recipe.label}</h5>
+        <p class="card-text"><strong>Health Info:</strong> ${data.hits[i].recipe.healthLabels}</p>
+        <p class="card-text"><strong>Prep Time:</strong> ${data.hits[i].recipe.totalTime} min</p>
+        <p class="card-text"><strong>Calories:</strong> ${data.hits[i].recipe.calories} cal</p>
+        <a href="${data.hits[i].recipe.url}" class="btn btn-primary btn-recipe" target="_blank">Full Recipe</a>
         </div>
+      </div>
 
-        </div>`
+        </div>
+    
+          `
     }
     document.querySelector("#content").innerHTML = display_Result;
   }
 }
 
-
+// ------------------------------------------------------------------------------
 
 
