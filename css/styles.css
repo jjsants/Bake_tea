@@ -132,7 +132,7 @@ box-shadow: 7px 7px 14px 0px rgba(231,166,26,0.93);
   }
   .logo {
     letter-spacing: 1rem;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-top: 1rem !important;
     margin-bottom: 1.5rem !important;
@@ -144,6 +144,7 @@ box-shadow: 7px 7px 14px 0px rgba(231,166,26,0.93);
   }
   .navColor {
     position: static; 
+    padding: 0 !important;
   }
   .nav-information{
     margin-right: 0;
@@ -220,7 +221,7 @@ box-shadow: 7px 7px 14px 0px rgba(231,166,26,0.93);
     width: 85% !important;
   }
   .bake{
-    font-size: 26px;
+    font-size: 1.3rem;
   }
 }
 /* end nav bar and introduction page mobile*/
@@ -238,7 +239,7 @@ height: 120vh;
 }
 .about-header-h {
   letter-spacing: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: black;
   font-weight: lighter;
   text-align: center;
@@ -257,8 +258,9 @@ height: 120vh;
 }
 .about-decade{
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: .5rem;
+  font-weight: bold;
 }
 .img-bake {
   width: 200px;
@@ -408,7 +410,7 @@ height: 120vh;
 }
 .collection-header-h {
   letter-spacing: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: black;
   font-weight: lighter;
   text-align: center;
@@ -429,6 +431,7 @@ height: 120vh;
   letter-spacing: 1.5rem;
   font-weight: lighter;
   margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 .collection-weddings-brunch{
 letter-spacing: .5rem;
@@ -604,7 +607,7 @@ letter-spacing: .5rem;
 }
 .testimonial-header-h {
   letter-spacing: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: black;
   font-weight: lighter;
   text-align: center;
@@ -640,7 +643,7 @@ letter-spacing: .5rem;
 .testimonial-text{
   font-weight: lighter;
   line-height: 1.5;
-  font-size: 1.6rem;
+  font-size: 1.1rem;
   font-style: italic;
   padding: 6rem 0 0 0 !important;
   width: 70%;
@@ -683,7 +686,7 @@ letter-spacing: .5rem;
 
   .testimonial-header-h {
     letter-spacing: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: black;
     font-weight: lighter;
     text-align: center;
@@ -711,7 +714,7 @@ letter-spacing: .5rem;
   }
   .testimonial-text{
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.1rem !important;
     line-height: 1.5;
     padding: 2rem 0 0 0 !important;
     width: 70%;
@@ -753,11 +756,11 @@ letter-spacing: .5rem;
   z-index: -5;
   position: absolute;
   height: 100vh;
-
+  overflow: hidden;
 }
 .recipe-header-h {
   letter-spacing: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: black;
   font-weight: lighter;
   text-align: center;
@@ -766,7 +769,7 @@ letter-spacing: .5rem;
 .recipe-header-p {
   font-size: 1rem;
   text-align: center;
-  font-weight: 600;
+  font-weight: lighter;
   margin-top: 2rem;
   margin-bottom: 3rem;
 }
@@ -930,15 +933,22 @@ margin-top: 5%;
 @media screen and (max-width: 720px) {
 
   .recipeApi{
-    height: 107% !important;
+    height: 127% !important;
+    overflow: hidden;
   }
   .map-layout{
     padding-left: 3rem;
     text-align: left;
     margin: auto 0;
   }
+
+  #map1 {
+    height: 4rem;
+    width: 10rem;
+    border-radius: 5%;
+  }
   .map-text{
-    padding-left: 2rem;
+    padding-left: 1rem;
   }
   .map-main{
     margin-top: 2rem;
@@ -948,7 +958,7 @@ margin-top: 5%;
     background-color: transparent;
     height: 36px;
     width: 40px;
-    margin: 20px 20px 20px 20px;
+    margin: 12.5px 12.5px 12.5px 12.5px;
   }
   .footer-logo-main{
     text-align: center;
@@ -956,7 +966,7 @@ margin-top: 5%;
   }
   .card {
     display: flex;
-    height: 40vh !important;
+    height: 50vh !important;
     width: 40vw !important;
     object-fit: cover;
     border: 2px solid white;
@@ -1023,7 +1033,7 @@ margin-top: 5%;
 }
 .contact-logo {
   letter-spacing: 2rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   background: linear-gradient(to left, #87c7df, #648896) !important;
   -webkit-background-clip: text !important;
@@ -1056,6 +1066,7 @@ box-shadow: 0px 2px 5px 4px rgba(252,245,176,1);
 .contact-header{
   text-align: center;
   margin-bottom: 30px;
+  font-size: 1.5rem;
 }
 label, .inputs, textarea{
   width: 80%;
@@ -1153,7 +1164,7 @@ box-shadow: 0px 0px 14px 9px rgba(0,0,0,0.75);
 
   .contact-logo {
     letter-spacing: 1rem;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     font-weight: bold;
     margin-top: .5rem !important;
     /* margin-bottom: 1.5rem !important; */
@@ -1181,6 +1192,7 @@ box-shadow: 0px 0px 14px 9px rgba(0,0,0,0.75);
   .contact{
     height: 100%;
     padding-top: 0 !important;
+    width: 100%;
   }
   .contact-header{
     text-align: center;
@@ -1198,7 +1210,7 @@ box-shadow: 0px 0px 14px 9px rgba(0,0,0,0.75);
     font-size: 16px !important;
   }
   .contact-img {
-    width: 300px;
+    width: 250px !important;
     position: absolute;
     object-fit: cover;
     top: 300px;
