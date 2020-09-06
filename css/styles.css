@@ -932,7 +932,7 @@ margin-top: 5%;
 @media screen and (max-width: 720px) {
 
   .recipeApi{
-    height: 127% !important;
+    height: 117% !important;
     overflow: hidden;
   }
   .map-layout{
@@ -965,7 +965,7 @@ margin-top: 5%;
   }
   .card {
     display: flex;
-    height: 50vh !important;
+    height: auto !important;
     width: 40vw !important;
     object-fit: cover;
     border: 2px solid white;
