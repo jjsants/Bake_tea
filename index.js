@@ -10,7 +10,7 @@ function changeSlide(direction) {
   var nextImg = currentImg.next();
   var previousImg = currentImg.prev();
 
-  if (direction == "next") {
+  if (direction === "next") {
     if (nextImg.length) {
       nextImg.addClass("active1");
     } else {
@@ -33,7 +33,7 @@ function changeSlide2(direction) {
   var nextImg = currentImg.next();
   var previousImg = currentImg.prev();
 
-  if (direction == "next") {
+  if (direction === "next") {
     if (nextImg.length) {
       nextImg.addClass("active2");
     } else {
@@ -95,7 +95,7 @@ content.appendChild(searchNoInput);
 searchButton.addEventListener("click", () => {
   console.log("button pressed")
 
-  if (searchInput.value == "") {
+  if (searchInput.value === "") {
     setTimeout(function () {
       searchNoInput.innerHTML = "<h2> Please enter a name.</h2>" // only working once at the moment.
       $(searchNoInput).fadeOut(5000);
@@ -128,7 +128,7 @@ function useApiData(data) {
   let counter = 0;
 
   for (let i = 0; i < data.hits.length; i++) {
-    if (counter == 0) {
+    if (counter === 0) {
       display_Result = display_Result + `
       <div class="carousel-item carousel-item-api active">
 
